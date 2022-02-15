@@ -42,3 +42,16 @@
 .ant-layout-footer {
   padding: 0 !important;
 }
+
+aside.ant-layout-sider.ant-layout-sider-dark {
+  width: 230px !important;
+  flex: 0 230px !important;
+  max-width: 230px !important;
+}
+main.ant-layout-content {
+  background-color: #ffffff;
+}
+
+.ant-layout-sider-children {
+  background-image: url("./assets/images/sidebar.png");
+}

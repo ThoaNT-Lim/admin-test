@@ -1,4 +1,24 @@
 .sidebar {
-  background-color: #3ba0e9;
+  background-image: url("../../../assets/images/sidebar.png");
   min-height: 100vh;
+
+  ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light {
+    background-image: url("../../../assets/images/sidebar.png");
+  }
+  .sidebar-logo {
+    padding-top: 30px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    text-align: left;
+  }
+  .sidebar-back {
+    text-align: left;
+    padding: 0 0 24px 16px;
+  }
+  .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: #07436f;
+  }
+  li.ant-menu-item.ant-menu-item-only-child {
+    margin: 0px !important;
+  }
 }

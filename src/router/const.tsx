@@ -1,5 +1,7 @@
 const PATH_ROUTE = {
-    homePage: '/home'
-}
+  homePage: "/home",
+  listGroup: "list-group",
+  detailGroup: "group",
+};
 
 export default PATH_ROUTE;

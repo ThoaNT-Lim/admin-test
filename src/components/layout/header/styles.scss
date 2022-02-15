@@ -1,4 +1,17 @@
 .header {
   color: #fff;
-  background-color: #7dbcea;
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-right: 3rem;
+
+  .header-search {
+    display: flex;
+    align-items: center;
+    button.ant-btn.ant-btn-icon-only.ant-input-search-button {
+      border-left: none;
+    }
+  }
 }
