@@ -14,7 +14,7 @@ function TableListGroup() {
   const [dataRow, setDataRow] = useState(data);
   const [pagination, setPagination] = useState({
     current: 1,
-    pageSize: 8,
+    pageSize: 10,
     loading: false,
   });
 

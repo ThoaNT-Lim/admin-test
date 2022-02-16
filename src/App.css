@@ -55,3 +55,7 @@ main.ant-layout-content {
 .ant-layout-sider-children {
   background-image: url("./assets/images/sidebar.png");
 }
+
+body {
+  font-family: 'Roboto';
+}
