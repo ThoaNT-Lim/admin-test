@@ -1,0 +1,14 @@
+.list-member {
+
+  .member-header {
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: uppercase;
+    padding-left: 1rem;
+    padding-bottom: 8px;
+  }
+  .ant-list-split .ant-list-item {
+    border-bottom: none !important;
+    line-height: 22px;
+  }
+}
