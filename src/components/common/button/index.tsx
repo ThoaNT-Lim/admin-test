@@ -3,9 +3,9 @@ import React from "react";
 import "./styles.scss";
 
 interface ButtonProps {
-  name: string;
+  name?: string;
   style?: any;
-  type:
+  type?:
     | "link"
     | "text"
     | "ghost"
@@ -13,13 +13,16 @@ interface ButtonProps {
     | "primary"
     | "dashed"
     | undefined;
+  htmlType?: "submit" | "button";
 }
 
 function ButtonCustom(props: ButtonProps) {
-  const { name, type } = props;
+  const { name, type, htmlType } = props;
   return (
     <span className="wrapper-button">
-      <Button type={type}>{name}</Button>
+      <Button type={type} htmlType={htmlType}>
+        {name}
+      </Button>
     </span>
   );
 }
