@@ -15,9 +15,9 @@ function DetailGroup() {
   };
 
   const handleDelete = () => {
-    console.log('Delete');
+    console.log("Delete");
     //action delete
-    navigate(`/${PATH_ROUTE.listGroup}`)
+    navigate(`/${PATH_ROUTE.listGroup}`);
   };
   return (
     <div className="wrapper-detail-page">

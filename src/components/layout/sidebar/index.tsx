@@ -2,8 +2,9 @@ import { ArrowLeftOutlined } from "@ant-design/icons";
 import { Menu } from "antd";
 import React from "react";
 import logoVIB from "../../../assets/images/logoVIB.png";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./styles.scss";
+import PATH_ROUTE from "../../../router/const";
 function Sidebar() {
   const navigate = useNavigate();
   return (
@@ -24,7 +25,7 @@ function Sidebar() {
           mode="inline"
         >
           <Menu.Item key="1" style={{ color: "#ffffff" }}>
-            Danh sách group
+            <Link to={PATH_ROUTE.listGroup}>Danh sách group</Link>
           </Menu.Item>
           <Menu.Item key="2" style={{ color: "#ffffff" }}>
             Phân quyền user
