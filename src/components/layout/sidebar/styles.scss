@@ -21,4 +21,13 @@
   li.ant-menu-item.ant-menu-item-only-child {
     margin: 0px !important;
   }
+  .active {
+    color: white
+  }
+  .noActive {
+    color: #ffffff;
+  }
+  .ant-menu-item a {
+    color: #ffffff;
+  }
 }

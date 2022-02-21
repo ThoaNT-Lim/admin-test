@@ -1,0 +1,28 @@
+.group-form-create {
+    // margin-top: 2rem;
+  
+    .ant-list-split .ant-list-item:last-child {
+      border-bottom: 1px solid #f0f0f0;
+    }
+  
+    .ant-list-bordered {
+      border: none;
+      margin-bottom: 1.5rem;
+    }
+  
+    span.anticon.anticon-close-circle {
+      position: absolute;
+      right: 0px;
+      cursor: pointer;
+    }
+
+    .user-form-info {
+        margin-bottom: 24px;
+        
+    }
+    .group-form-title {
+        font-weight: 600;
+        // margin-bottom: 8px;
+    }
+  }
+  

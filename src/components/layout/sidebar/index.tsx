@@ -1,10 +1,10 @@
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { Menu } from "antd";
 import React from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import logoVIB from "../../../assets/images/logoVIB.png";
-import { Link, useNavigate } from "react-router-dom";
-import "./styles.scss";
 import PATH_ROUTE from "../../../router/const";
+import "./styles.scss";
 function Sidebar() {
   const navigate = useNavigate();
   return (
@@ -25,10 +25,13 @@ function Sidebar() {
           mode="inline"
         >
           <Menu.Item key="1" style={{ color: "#ffffff" }}>
-            <Link to={PATH_ROUTE.listGroup}>Danh sách group</Link>
+            <NavLink to={PATH_ROUTE.listGroup}>Danh sách group</NavLink>
           </Menu.Item>
           <Menu.Item key="2" style={{ color: "#ffffff" }}>
-            Phân quyền user
+            <NavLink
+             to={PATH_ROUTE.checkRollUser}
+             className={(navData) => navData.isActive ? "active" : "noAcive" }
+            >Phân quyền user</NavLink>
           </Menu.Item>
         </Menu>
       </div>

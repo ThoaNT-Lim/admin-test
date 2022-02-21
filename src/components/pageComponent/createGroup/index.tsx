@@ -1,6 +1,8 @@
 import { PlusCircleFilled } from "@ant-design/icons";
 import { Button, Form, Select, Space } from "antd";
 import React from "react";
+import { useNavigate } from "react-router";
+import PATH_ROUTE from "../../../router/const";
 import ButtonCustom from "../../common/button";
 import InputCustom from "../../common/input";
 import TextAreaCustom from "../../common/textArea";
@@ -9,7 +11,7 @@ import "./styles.scss";
 
 function FormCreateGroup() {
   const [form] = Form.useForm();
-
+  let navigate = useNavigate();
   const { Option } = Select;
   const children: JSX.Element[] = [];
   for (let i = 10; i < 36; i++) {
@@ -21,6 +23,11 @@ function FormCreateGroup() {
   const onFinish = (values: any) => {
     console.log("Success:", values);
   };
+
+  const handleCancel = () => {
+    form.resetFields();
+    navigate(`/${PATH_ROUTE.listGroup}`);
+  }
 
   return (
     <div className="group-form-create">
@@ -93,7 +100,7 @@ function FormCreateGroup() {
         </div>
         <Form.Item className="button-submit">
           <Space>
-            <ButtonCustom htmlType="button" name="Hủy" />
+            <ButtonCustom htmlType="button" name="Hủy" handleClick={handleCancel}/>
             <ButtonCustom type="primary" htmlType="submit" name="Tạo mới" />
           </Space>
         </Form.Item>
