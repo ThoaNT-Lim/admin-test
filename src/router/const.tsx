@@ -3,6 +3,7 @@ const PATH_ROUTE = {
   listGroup: "list-group",
   detailGroup: "group",
   createGroup: "/create-group",
+  editGroup: '/edit-group',
   checkRollUser: '/user-roll'
 };
 

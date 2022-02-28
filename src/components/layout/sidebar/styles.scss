@@ -1,9 +1,11 @@
 .sidebar {
   background-image: url("../../../assets/images/sidebar.png");
+  background-size: cover;
   min-height: 100vh;
 
   ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light {
     background-image: url("../../../assets/images/sidebar.png");
+    background-size: cover;
   }
   .sidebar-logo {
     padding-top: 30px;

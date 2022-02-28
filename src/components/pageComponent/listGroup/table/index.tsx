@@ -150,11 +150,12 @@ function TableListGroup() {
       dataIndex: "",
       width: 120,
       render: (item: RowDataProps) => {
-        return <span style={{ color: "#1E71B8" }}>Chỉnh sửa</span>;
+        return <Link to={`${PATH_ROUTE.editGroup}/${item.id}`}>{item.id}</Link>;
       },
     },
   ];
 
+ 
   const handleTableChange = (pagination: any, filters: any, sorter: any) => {
     setPagination(pagination);
   };

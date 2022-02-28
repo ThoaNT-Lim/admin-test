@@ -9,7 +9,9 @@ import TextAreaCustom from "../../common/textArea";
 import GroupToolReport from "./groupToolReport";
 import "./styles.scss";
 
-function FormCreateGroup() {
+function FormCreateGroup({
+  dataDetail
+} : any) {
   const [form] = Form.useForm();
   let navigate = useNavigate();
   const { Option } = Select;
@@ -29,9 +31,21 @@ function FormCreateGroup() {
     navigate(`/${PATH_ROUTE.listGroup}`);
   }
 
+  console.log(dataDetail, 'dataDetail')
+
   return (
     <div className="group-form-create">
-      <Form name="basic" autoComplete="off" form={form} onFinish={onFinish}>
+      <Form name="basic" 
+       autoComplete="off"
+       form={form} 
+       onFinish={onFinish}
+       initialValues={{
+         name: dataDetail.name,
+         description: dataDetail.description,
+         toolReport: dataDetail.children
+       }}
+
+       >
         <div className="group-form-info">
           <div className="group-form-title">Thông tin group</div>
           <div>

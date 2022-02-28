@@ -1,5 +1,6 @@
 import React from 'react'
-import FormUserAddRoll from '../../components/pageComponent/userRoll'
+import FormUserAddRoll from '../../components/pageComponent/userRoll';
+import './styles.scss';
 
 function UserRoll() {
   return (

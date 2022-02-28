@@ -7,10 +7,12 @@ interface InputProps {
   type: string;
   style?: any;
   onChange?: any;
+  defaultValue?: any,
+  value?: any
 }
 
 function InputCustom(props: InputProps) {
-  const { placeholder, type, style, onChange } = props;
+  const { placeholder, type, style, onChange, defaultValue, value } = props;
   return (
     <Input
       className="input-styles"
@@ -19,6 +21,8 @@ function InputCustom(props: InputProps) {
       style={style}
       size="large"
       onChange={onChange}
+      defaultValue={defaultValue}
+      value={value}
     />
   );
 }
