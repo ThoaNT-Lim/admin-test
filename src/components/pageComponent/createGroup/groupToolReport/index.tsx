@@ -1,6 +1,6 @@
 import { CloseCircleFilled, MinusCircleOutlined } from "@ant-design/icons";
 import { Form, List, TagProps } from "antd";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SelectCustom from "../../../common/select";
 import "./styles.scss";
 
@@ -45,6 +45,15 @@ function GroupToolReport({
     Object.assign(toolReport[index], { report: listReportRemaining });
     form.setFieldsValue({ toolReport });
   };
+
+  useEffect(() => {
+    const fields = form.getFieldsValue();
+    const { toolReport } = fields;
+    if(toolReport.length > 0 && toolReport[index]?.tool){
+      setIsOpen(true);
+      setListReport(toolReport[index]?.report)
+    }
+  }, [form, index])
 
   return (
     <div className="group-form-tool" key={index}>

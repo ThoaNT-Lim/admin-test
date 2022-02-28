@@ -1,6 +1,6 @@
 import React from 'react'
 import FormCreateGroup from '../../components/pageComponent/createGroup';
-import { data } from '../detailGroup/mockdataDetail';
+import { data } from './mockData';
 import './styles.scss'
 
 function EditGroup() {
@@ -10,7 +10,7 @@ function EditGroup() {
     <div className="wrapper-create-list-group">
       <div className="group-header">Group 1</div>
       <div className="group-table">
-        <FormCreateGroup dataDetail={data}/>
+        <FormCreateGroup dataDetail={data} isEdit={true}/>
       </div>
     </div>
   )

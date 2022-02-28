@@ -10,8 +10,12 @@ import GroupToolReport from "./groupToolReport";
 import "./styles.scss";
 
 function FormCreateGroup({
-  dataDetail
-} : any) {
+  dataDetail,
+  isEdit
+} : {
+  dataDetail?: any,
+  isEdit?: any
+}) {
   const [form] = Form.useForm();
   let navigate = useNavigate();
   const { Option } = Select;
@@ -31,8 +35,6 @@ function FormCreateGroup({
     navigate(`/${PATH_ROUTE.listGroup}`);
   }
 
-  console.log(dataDetail, 'dataDetail')
-
   return (
     <div className="group-form-create">
       <Form name="basic" 
@@ -40,9 +42,14 @@ function FormCreateGroup({
        form={form} 
        onFinish={onFinish}
        initialValues={{
-         name: dataDetail.name,
-         description: dataDetail.description,
-         toolReport: dataDetail.children
+         name: dataDetail?.name,
+         description: dataDetail?.description,
+         toolReport: dataDetail?.toolReport?.map((item : any) => {
+           return {
+             tool: item?.tool,
+             report: item?.report?.map((report: any) => report.value)
+           }
+         })
        }}
 
        >
@@ -84,6 +91,7 @@ function FormCreateGroup({
               return (
                 <>
                   {fields.map(({ key, name, ...restField }) => {
+                    console.log(fields, 'fields')
                     return (
                       <GroupToolReport
                         key={key}
@@ -115,7 +123,7 @@ function FormCreateGroup({
         <Form.Item className="button-submit">
           <Space>
             <ButtonCustom htmlType="button" name="Hủy" handleClick={handleCancel}/>
-            <ButtonCustom type="primary" htmlType="submit" name="Tạo mới" />
+            <ButtonCustom type="primary" htmlType="submit" name={isEdit ? "Lưu" : "Tạo mới"} />
           </Space>
         </Form.Item>
       </Form>

@@ -52,6 +52,7 @@ main.ant-layout-content {
 
 .ant-layout-sider-children {
   background-image: url("./assets/images/sidebar.png");
+  background-size: cover
 }
 
 body {
