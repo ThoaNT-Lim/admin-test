@@ -17,4 +17,23 @@
   tbody.ant-table-tbody {
     min-width: 900px;
   }
+  ul.ant-pagination.ant-table-pagination.ant-table-pagination-right {
+    width: 80%;
+    display: flex;
+    right: 0px;
+    margin-left: 20%;
+}
+.total-records {
+  justify-content: flex-start;
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+  align-items: center;
+  max-width: 20%;
+}
+main.ant-layout-content {
+  position: relative;
+}
+
+
 }

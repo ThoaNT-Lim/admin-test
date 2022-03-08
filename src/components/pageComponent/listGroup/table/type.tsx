@@ -16,3 +16,8 @@ export interface DataTypeOneGroup {
   description: string;
   members?: User[];
 }
+
+export interface DataListGroupType {
+  data: DataTypeOneGroup[],
+  totalRecords: number
+}

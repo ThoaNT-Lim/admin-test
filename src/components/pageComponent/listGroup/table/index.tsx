@@ -150,7 +150,7 @@ function TableListGroup() {
       dataIndex: "",
       width: 120,
       render: (item: RowDataProps) => {
-        return <Link to={`${PATH_ROUTE.editGroup}/${item.id}`}>{item.id}</Link>;
+        return <Link to={`${PATH_ROUTE.editGroup}/${item.id}`}>Chỉnh sửa</Link>;
       },
     },
   ];
@@ -176,6 +176,7 @@ function TableListGroup() {
         pagination={pagination}
         onChange={handleTableChange}
       />
+      <div className="total-records">Tổng số: {dataRow.length > 0 ? 1000 : 0}</div>
     </div>
   );
 }
