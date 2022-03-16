@@ -1,0 +1,97 @@
+# cache:
+#   untracked: true
+#   key: "$CI_PROJECT_ID"
+#   paths:
+#     - node_modules/
+#     # - build/
+#     # - _site/vendor/
+#     # - .bundled/
+#     - .yarn
+
+stages:
+  - build_image
+  - test
+  - build_react
+  - deploy
+
+# build_image:
+#   stage: build_image
+#   tags:
+#     - shell
+#   script:
+#     - echo "Building image"
+#     - docker image rm -f nk-host-web:1.0
+#     - docker build --tag nk-host-web:1.0 .
+#     - echo "Build image successful"
+
+test:
+  stage: test
+  image: node
+  tags:
+    - dev-docker
+  script:
+    - echo "Test"
+    - yarn
+    - yarn lint
+    - yarn ci_test
+    - echo "Test successful"
+
+  artifacts:
+    paths:
+      - node_modules
+
+  only:
+    - master
+    - dev
+
+build_react:
+  stage: build_react
+  image: node
+  tags:
+    - dev-docker
+  script:
+    - echo "Build"
+    - yarn
+    # - yarn run ci_test
+    - yarn build
+    - echo "Build successful"
+
+  artifacts:
+    paths:
+      - build
+
+  only:
+    - master
+    - dev
+
+deploy_development:
+  stage: deploy
+  tags:
+    - dev-shell
+  script:
+    - ls
+    - pwd
+    - sudo mkdir -p /data/nk/nk-admin-web-build/
+    - sudo rm -rf /data/nk/nk-admin-web-build/*
+    - sudo cp -r build/ /data/nk/nk-admin-web-build/
+
+  only:
+    - master
+    - dev
+
+deploy_production:
+  stage: deploy
+  tags:
+    - prod-shell
+  script:
+    - ls
+    - pwd
+    - sudo mkdir -p /data/nk/nk-admin-web-build/
+    - sudo rm -rf /data/nk/nk-admin-web-build/*
+    - sudo cp -r build/ /data/nk/nk-admin-web-build/
+
+  only:
+    - master
+    - dev
+
+  when: manual
